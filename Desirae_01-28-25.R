@@ -55,7 +55,7 @@ var2 <- "red"
 ###if-else statements
 if (30 == 24)
   {
-  print ("30 equals 24"
+  print ("30 equals 24")
 } else 
   { 
   print ("30 does not equal 24")
