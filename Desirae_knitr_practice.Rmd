@@ -1,0 +1,49 @@
+---
+title: "Desirae_practice"
+author: "Desirae Ledesma"
+date: "2025-02-13"
+output: html_document
+---
+```{r}
+summary(cars)
+
+
+```
+
+```{r, eval = TRUE}
+print("this will be printed")
+```
+
+```{r, eval = FALSE}
+print("this will not be printed")
+```
+
+```{r, include = TRUE}
+print("this will be printed")
+```
+
+```{r, include = FALSE}
+print("this will not be printed")
+```
+
+```{r, warning = TRUE}
+log(-1)
+```
+
+```{r, warning = FALSE}
+log(-1)
+```
+
+```{r, fig.width=8, fig.height=6}
+plot(cars)
+```
+
+```{r, fig.cap= "scatter plot of cars data"}
+plot(cars)
+```
+
+```{r, fig.width=10, fig.height=5, fig.cap="updated car plot"}
+plot(cars)
+```
+
+
