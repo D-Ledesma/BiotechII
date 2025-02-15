@@ -1,0 +1,51 @@
+---
+title: "Knitr assignment"
+author: "Desirae Ledesma"
+date: "2025-02-13"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: console
+---
+
+# 1. This is the plot that was made in the last class 02/11/2025, this plot is just used as a reference and practice
+```{r, echo = FALSE}
+library(ggplot2)
+ggplot(Orange, aes(age, circumference)) +
+  geom_line(mapping = aes(color = Tree)) +
+  theme_test() +
+  labs(x = "Age",
+       y = "Circumference",
+       title = "Age of Different Trees vs Their Circumference",
+       color = "Trees") +
+  scale_color_manual(values = c(1, 2, 3, 4, 5))
+```
+
+# 2. Table of the dataframe mpg
+```{r, echo = FALSE}
+print(mpg, n = 224)
+```
+
+# 3. Summary of the new plot to be made
+```{r, echo = FALSE}
+summary(mpg, x = cty, y = class)
+
+```
+
+
+# 4. Plot of mpg of different classes of car in the city
+```{r, echo = FALSE}
+ggplot(mpg, aes(cty,class)) +
+  geom_boxplot() +
+  theme_test() +
+  labs(
+    x = "City",
+    y = "Class",
+    title = "Miles per gallon of different classes in a city",
+  ) +
+  scale_colour_viridis_d()
+```
+
+
