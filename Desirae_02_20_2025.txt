@@ -1,0 +1,86 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Feb 20 17:33:30 EST 2025
+
+  System load:  0.24                Processes:             56
+  Usage of /:   0.1% of 1006.85GB   Users logged in:       0
+  Memory usage: 3%                  IPv4 address for eth0: 172.24.37.170
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+ment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/desirae/.hushlogin file.
+desirae@OmenPC:~$ ls
+practice2.txt  renamed_practice_folder
+desirae@OmenPC:~$ rm practice2.txt
+desirae@OmenPC:~$ rmdir renamed_practice_folder/
+desirae@OmenPC:~$ ls
+desirae@OmenPC:~$ mkdir 02_20_2025
+desirae@OmenPC:~$ ls
+02_20_2025
+desirae@OmenPC:~$ cd 02_20_2025/
+desirae@OmenPC:~/02_20_2025$ nanotest.sh
+nanotest.sh: command not found
+desirae@OmenPC:~/02_20_2025$ nano test.sh
+desirae@OmenPC:~/02_20_2025$ bash test.sh
+Hello, World!
+desirae@OmenPC:~/02_20_2025$ nano test.sh
+desirae@OmenPC:~/02_20_2025$ bash test.sh
+desirae@OmenPC:~/02_20_2025$ ls
+activity_1  activity_1.txt  test.sh
+desirae@OmenPC:~/02_20_2025$ nano test.sh
+desirae@OmenPC:~/02_20_2025$ ls
+activity_1  activity_1.txt  test.sh
+desirae@OmenPC:~/02_20_2025$ rm activity_1
+rm: cannot remove 'activity_1': Is a directory
+desirae@OmenPC:~/02_20_2025$ rmdir activity_1
+desirae@OmenPC:~/02_20_2025$ rm activity_1.txt
+desirae@OmenPC:~/02_20_2025$ ls
+test.sh
+desirae@OmenPC:~/02_20_2025$ bash test.sh
+desirae@OmenPC:~/02_20_2025$ ls
+activity_1  test.sh
+desirae@OmenPC:~/02_20_2025$ cd activity_1
+desirae@OmenPC:~/02_20_2025/activity_1$ ls
+activity_1.txt
+desirae@OmenPC:~/02_20_2025/activity_1$ nano activity_1.txt
+desirae@OmenPC:~/02_20_2025/activity_1$ less activity_1.txt
+desirae@OmenPC:~/02_20_2025/activity_1$ bash text.sh
+bash: text.sh: No such file or directory
+desirae@OmenPC:~/02_20_2025/activity_1$ bash test.txt
+bash: test.txt: No such file or directory
+desirae@OmenPC:~/02_20_2025/activity_1$ cd ..
+desirae@OmenPC:~/02_20_2025$ ls
+activity_1  test.sh
+desirae@OmenPC:~/02_20_2025$ bash test.sh
+mkdir: cannot create directory ‘activity_1’: File exists
+desirae@OmenPC:~/02_20_2025$ nano text.sh
+desirae@OmenPC:~/02_20_2025$ nano test.sh
+desirae@OmenPC:~/02_20_2025$ ls
+activity_1  test.sh
+desirae@OmenPC:~/02_20_2025$ cd activity_1
+desirae@OmenPC:~/02_20_2025/activity_1$ ls
+activity_1.txt
+desirae@OmenPC:~/02_20_2025/activity_1$ less activity_1.txt
+desirae@OmenPC:~/02_20_2025/activity_1$ ls
+activity_1.txt  notepad.sh
+desirae@OmenPC:~/02_20_2025/activity_1$ bash notepad.sh
+desirae@OmenPC:~/02_20_2025/activity_1$ ls
+activity_1.txt  notepad.sh
+desirae@OmenPC:~/02_20_2025/activity_1$ ls
+activity_1.txt  notepad.sh
+desirae@OmenPC:~/02_20_2025/activity_1$ cd ..
+desirae@OmenPC:~/02_20_2025$ ls
+activity_1  notepad_directory  test.sh
+desirae@OmenPC:~/02_20_2025$ cd notepad_directory/
+desirae@OmenPC:~/02_20_2025/notepad_directory$ ls
+notepad_note.txt
+desirae@OmenPC:~/02_20_2025/notepad_directory$
