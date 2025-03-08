@@ -1,0 +1,216 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Mar  4 17:40:24 EST 2025
+
+  System load:  1.73                Processes:             91
+  Usage of /:   0.8% of 1006.85GB   Users logged in:       0
+  Memory usage: 3%                  IPv4 address for eth0: 172.24.37.170
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/desirae/.hushlogin file.
+desirae@OmenPC:~$ ls
+02_20_2025  02_25_25  02_27_25  igv
+desirae@OmenPC:~$ cd 02_25_25
+desirae@OmenPC:~/02_25_25$ ls
+example_snp.vcf                  sampleA.bam                       sampleA_R1_fastqc.zip
+example_snp.vcf:Zone.Identifier  sampleA.sam                       sampleA_R2.fq.gz
+reference.fa                     sampleA.sorted.bam                sampleA_R2.fq.gz:Zone.Identifier
+reference.fa.amb                 sampleA.sorted.bam.bai            sampleA_R2.out.fq.gz
+reference.fa.ann                 sampleA_R1.fq.gz                  sampleB_R1.fq.gz
+reference.fa.bwt                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R1.fq.gz:Zone.Identifier
+reference.fa.fai                 sampleA_R1.out.fq.gz              sampleB_R2.fq.gz
+reference.fa.pac                 sampleA_R1.out_fastqc.html        sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.sa                  sampleA_R1.out_fastqc.zip
+reference.fa:Zone.Identifier     sampleA_R1_fastqc.html
+desirae@OmenPC:~/02_25_25$ sudo apt install bcftools
+[sudo] password for desirae:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+bcftools is already the newest version (1.19-1build2).
+bcftools set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 109 not upgraded.
+desirae@OmenPC:~/02_25_25$ bcftools.mpileup -Ou -f reference.fa sampleA.sorted.bam > sampleA.mpileup
+bcftools.mpileup: command not found
+desirae@OmenPC:~/02_25_25$ bcftools mpileup -Ou -f reference.fa sampleA.sorted.bam > sampleA.mpileup
+[mpileup] 1 samples in 1 input files
+[mpileup] maximum number of reads per input file set to -d 250
+desirae@OmenPC:~/02_25_25$ ls
+example_snp.vcf                  sampleA.bam                       sampleA_R1_fastqc.html
+example_snp.vcf:Zone.Identifier  sampleA.mpileup                   sampleA_R1_fastqc.zip
+reference.fa                     sampleA.sam                       sampleA_R2.fq.gz
+reference.fa.amb                 sampleA.sorted.bam                sampleA_R2.fq.gz:Zone.Identifier
+reference.fa.ann                 sampleA.sorted.bam.bai            sampleA_R2.out.fq.gz
+reference.fa.bwt                 sampleA_R1.fq.gz                  sampleB_R1.fq.gz
+reference.fa.fai                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R1.fq.gz:Zone.Identifier
+reference.fa.pac                 sampleA_R1.out.fq.gz              sampleB_R2.fq.gz
+reference.fa.sa                  sampleA_R1.out_fastqc.html        sampleB_R2.fq.gz:Zone.Identifier
+reference.fa:Zone.Identifier     sampleA_R1.out_fastqc.zip
+desirae@OmenPC:~/02_25_25$ bcftools call -mv -Ob -o variantsA.bcf sampleA.mpileup
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+desirae@OmenPC:~/02_25_25$ ls
+example_snp.vcf                  sampleA.bam                       sampleA_R1_fastqc.html
+example_snp.vcf:Zone.Identifier  sampleA.mpileup                   sampleA_R1_fastqc.zip
+reference.fa                     sampleA.sam                       sampleA_R2.fq.gz
+reference.fa.amb                 sampleA.sorted.bam                sampleA_R2.fq.gz:Zone.Identifier
+reference.fa.ann                 sampleA.sorted.bam.bai            sampleA_R2.out.fq.gz
+reference.fa.bwt                 sampleA_R1.fq.gz                  sampleB_R1.fq.gz
+reference.fa.fai                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R1.fq.gz:Zone.Identifier
+desirae@OmenPC:~/02_25_25$ bcftools filter -e 'QUAL <20' -o filtered_by_qual.vcf variantsA.vcf
+desirae@OmenPC:~/02_25_25$ ls    sampleA_R1.out_fastqc.html        sampleB_R2.fq.gz:Zone.Identifier
+example_snp.vcf                  sampleA.bam                       sampleA_R1_fastqc.zip
+example_snp.vcf:Zone.Identifier  sampleA.mpileup                   sampleA_R2.fq.gz
+filtered_by_qual.vcf             sampleA.sam                       sampleA_R2.fq.gz:Zone.Identifier
+reference.fa                     sampleA.sorted.bam                sampleA_R2.out.fq.gz
+reference.fa.amb                 sampleA.sorted.bam.bai            sampleB_R1.fq.gz
+reference.fa.ann                 sampleA_R1.fq.gz                  sampleB_R1.fq.gz:Zone.Identifier
+reference.fa.bwt                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R2.fq.gz
+reference.fa.fai                 sampleA_R1.out.fq.gz              sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.pac                 sampleA_R1.out_fastqc.html        summary.txt
+reference.fa.sa                  sampleA_R1.out_fastqc.zip         variantsA.bcf
+reference.fa:Zone.Identifier     sampleA_R1_fastqc.html            variantsA.vcf
+desirae@OmenPC:~/02_25_25$ bcftools filter -e 'DP<10' -o filtered_by_depth.vcf variantsA.vcf
+desirae@OmenPC:~/02_25_25$ ls
+example_snp.vcf                  sampleA.bam                       sampleA_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleA.mpileup                   sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_depth.vcf            sampleA.sam                       sampleA_R2.out.fq.gz
+filtered_by_qual.vcf             sampleA.sorted.bam                sampleB_R1.fq.gz
+reference.fa                     sampleA.sorted.bam.bai            sampleB_R1.fq.gz:Zone.Identifier
+reference.fa.amb                 sampleA_R1.fq.gz                  sampleB_R2.fq.gz
+reference.fa.ann                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.bwt                 sampleA_R1.out.fq.gz              summary.txt
+reference.fa.fai                 sampleA_R1.out_fastqc.html        variantsA.bcf
+reference.fa.pac                 sampleA_R1.out_fastqc.zip         variantsA.vcf
+reference.fa.sa                  sampleA_R1_fastqc.html
+reference.fa:Zone.Identifier     sampleA_R1_fastqc.zip
+desirae@OmenPC:~/02_25_25$ bcftools filter -e 'QUAL<20 || DP<10' -o filtered_variants.vcf variantsA.vcf
+desirae@OmenPC:~/02_25_25$ ls
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R1_fastqc.zip
+example_snp.vcf:Zone.Identifier  sampleA.bam                       sampleA_R2.fq.gz
+filtered_by_depth.vcf            sampleA.mpileup                   sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_qual.vcf             sampleA.sam                       sampleA_R2.out.fq.gz
+filtered_variants.vcf            sampleA.sorted.bam                sampleB_R1.fq.gz
+reference.fa                     sampleA.sorted.bam.bai            sampleB_R1.fq.gz:Zone.Identifier
+reference.fa.amb                 sampleA_R1.fq.gz                  sampleB_R2.fq.gz
+reference.fa.ann                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.bwt                 sampleA_R1.out.fq.gz              summary.txt
+reference.fa.fai                 sampleA_R1.out_fastqc.html        variantsA.bcf
+reference.fa.pac                 sampleA_R1.out_fastqc.zip         variantsA.vcf
+reference.fa.sa                  sampleA_R1_fastqc.html
+desirae@OmenPC:~/02_25_25$ bcftools stats filtered_by_depth.vcf > depthsummary.txt
+desirae@OmenPC:~/02_25_25$ bcftools stats filtered_by_qual.vcf > qualitysummary.txt
+desirae@OmenPC:~/02_25_25$ bcftools stats filtered_variants.vcf > variantssummary.txt
+desirae@OmenPC:~/02_25_25$ ls
+depthsummary.txt                 reference.fa.sa                   sampleA_R1_fastqc.zip
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleA.bam                       sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_depth.vcf            sampleA.mpileup                   sampleA_R2.out.fq.gz
+filtered_by_qual.vcf             sampleA.sam                       sampleB_R1.fq.gz
+filtered_variants.vcf            sampleA.sorted.bam                sampleB_R1.fq.gz:Zone.Identifier
+qualitysummary.txt               sampleA.sorted.bam.bai            sampleB_R2.fq.gz
+reference.fa                     sampleA_R1.fq.gz                  sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.amb                 sampleA_R1.fq.gz:Zone.Identifier  summary.txt
+reference.fa.ann                 sampleA_R1.out.fq.gz              variantsA.bcf
+reference.fa.bwt                 sampleA_R1.out_fastqc.html        variantsA.vcf
+reference.fa.fai                 sampleA_R1.out_fastqc.zip         variantssummary.txt
+reference.fa.pac                 sampleA_R1_fastqc.html
+desirae@OmenPC:~/02_25_25$ less depthsummary.txt
+desirae@OmenPC:~/02_25_25$ less qualitysummary.txt
+desirae@OmenPC:~/02_25_25$ less depthsummary.txt
+desirae@OmenPC:~/02_25_25$ less variants
+variantsA.bcf        variantsA.vcf        variantssummary.txt
+desirae@OmenPC:~/02_25_25$ less variantssummary.txt
+desirae@OmenPC:~/02_25_25$ ls
+depthsummary.txt                 reference.fa.sa                   sampleA_R1_fastqc.zip
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleA.bam                       sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_depth.vcf            sampleA.mpileup                   sampleA_R2.out.fq.gz
+filtered_by_qual.vcf             sampleA.sam                       sampleB_R1.fq.gz
+filtered_variants.vcf            sampleA.sorted.bam                sampleB_R1.fq.gz:Zone.Identifier
+qualitysummary.txt               sampleA.sorted.bam.bai            sampleB_R2.fq.gz
+reference.fa                     sampleA_R1.fq.gz                  sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.amb                 sampleA_R1.fq.gz:Zone.Identifier  summary.txt
+reference.fa.ann                 sampleA_R1.out.fq.gz              variantsA.bcf
+reference.fa.bwt                 sampleA_R1.out_fastqc.html        variantsA.vcf
+reference.fa.fai                 sampleA_R1.out_fastqc.zip         variantssummary.txt
+reference.fa.pac                 sampleA_R1_fastqc.html
+desirae@OmenPC:~/02_25_25$ cd
+desirae@OmenPC:~$ ls
+02_20_2025  02_25_25  02_27_25  igv
+desirae@OmenPC:~$ mkdir 03_07_25
+desirae@OmenPC:~$ ls 02_20_2025/
+activity_1  notepad_directory  test.sh
+desirae@OmenPC:~$ cd ..
+desirae@OmenPC:/home$ cd 02_25_25
+-bash: cd: 02_25_25: No such file or directory
+desirae@OmenPC:/home$ ls
+desirae
+desirae@OmenPC:/home$ cd desirae
+desirae@OmenPC:~$ ls
+02_20_2025  02_25_25  02_27_25  03_07_25  igv
+desirae@OmenPC:~$ cd 02_25_25/
+desirae@OmenPC:~/02_25_25$ ls
+depthsummary.txt                 reference.fa.sa                   sampleA_R1_fastqc.zip
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleA.bam                       sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_depth.vcf            sampleA.mpileup                   sampleA_R2.out.fq.gz
+filtered_by_qual.vcf             sampleA.sam                       sampleB_R1.fq.gz
+filtered_variants.vcf            sampleA.sorted.bam                sampleB_R1.fq.gz:Zone.Identifier
+qualitysummary.txt               sampleA.sorted.bam.bai            sampleB_R2.fq.gz
+reference.fa                     sampleA_R1.fq.gz                  sampleB_R2.fq.gz:Zone.Identifier
+reference.fa.amb                 sampleA_R1.fq.gz:Zone.Identifier  summary.txt
+reference.fa.ann                 sampleA_R1.out.fq.gz              variantsA.bcf
+reference.fa.bwt                 sampleA_R1.out_fastqc.html        variantsA.vcf
+reference.fa.fai                 sampleA_R1.out_fastqc.zip         variantssummary.txt
+reference.fa.pac                 sampleA_R1_fastqc.html
+desirae@OmenPC:~/02_25_25$ mv sampleB_R1.fq.gz desirae
+desirae@OmenPC:~/02_25_25$ ls
+depthsummary.txt                 reference.fa.pac                  sampleA_R1_fastqc.html
+desirae                          reference.fa.sa                   sampleA_R1_fastqc.zip
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleA.bam                       sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_depth.vcf            sampleA.mpileup                   sampleA_R2.out.fq.gz
+filtered_by_qual.vcf             sampleA.sam                       sampleB_R1.fq.gz:Zone.Identifier
+filtered_variants.vcf            sampleA.sorted.bam                sampleB_R2.fq.gz
+qualitysummary.txt               sampleA.sorted.bam.bai            sampleB_R2.fq.gz:Zone.Identifier
+reference.fa                     sampleA_R1.fq.gz                  summary.txt
+reference.fa.amb                 sampleA_R1.fq.gz:Zone.Identifier  variantsA.bcf
+reference.fa.ann                 sampleA_R1.out.fq.gz              variantsA.vcf
+reference.fa.bwt                 sampleA_R1.out_fastqc.html        variantssummary.txt
+reference.fa.fai                 sampleA_R1.out_fastqc.zip
+desirae@OmenPC:~/02_25_25$ mv sampleB_R2.fq.gz desirae
+desirae@OmenPC:~/02_25_25$ ls
+depthsummary.txt                 reference.fa.pac                  sampleA_R1_fastqc.html
+desirae                          reference.fa.sa                   sampleA_R1_fastqc.zip
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleA_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleA.bam                       sampleA_R2.fq.gz:Zone.Identifier
+filtered_by_depth.vcf            sampleA.mpileup                   sampleA_R2.out.fq.gz
+filtered_by_qual.vcf             sampleA.sam                       sampleB_R1.fq.gz:Zone.Identifier
+filtered_variants.vcf            sampleA.sorted.bam                sampleB_R2.fq.gz:Zone.Identifier
+qualitysummary.txt               sampleA.sorted.bam.bai            summary.txt
+reference.fa                     sampleA_R1.fq.gz                  variantsA.bcf
+reference.fa.amb                 sampleA_R1.fq.gz:Zone.Identifier  variantsA.vcf
+reference.fa.ann                 sampleA_R1.out.fq.gz              variantssummary.txt
+reference.fa.bwt                 sampleA_R1.out_fastqc.html
+reference.fa.fai                 sampleA_R1.out_fastqc.zip
+desirae@OmenPC:~/02_25_25$ cd ..
+desirae@OmenPC:~$ ls
+02_20_2025  02_25_25  02_27_25  03_07_25  igv
+desirae@OmenPC:~$ ls
+02_20_2025  02_25_25  02_27_25  03_07_25  igv
+desirae@OmenPC:~$ cd 03_07_25/
+desirae@OmenPC:~/03_07_25$ ls
+example_snp.vcf                  reference.fa:Zone.Identifier      sampleB_R2.fq.gz
+example_snp.vcf:Zone.Identifier  sampleB_R1.fq.gz                  sampleB_R2.fq.gz:Zone.Identifier
+reference.fa                     sampleB_R1.fq.gz:Zone.Identifier
+desirae@OmenPC:~/03_07_25$
