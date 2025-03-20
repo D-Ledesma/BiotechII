@@ -1,0 +1,349 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Mar 18 17:47:36 EDT 2025
+
+  System load:  0.0                 Processes:             91
+  Usage of /:   2.7% of 1006.85GB   Users logged in:       0
+  Memory usage: 3%                  IPv4 address for eth0: 172.24.37.170
+  Swap usage:   0%
+
+
+This message is shown once a day. To disable it please create the
+/home/desirae/.hushlogin file.
+desirae@OmenPC:~$ wget https://github.com/GwonjinLee/BiotechII/releases/download/RNAseq/RNAseq_data.zip
+--2025-03-18 17:47:55--  https://github.com/GwonjinLee/BiotechII/releases/download/RNAseq/RNAseq_data.zip
+Resolving github.com (github.com)... 140.82.112.4
+Connecting to github.com (github.com)|140.82.112.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/920315734/6c8cf7c0-a29e-4307-8da2-2a4f5ee66787?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250318T214755Z&X-Amz-Expires=300&X-Amz-Signature=0bd418178c40043f069e05a704e1936c2521a36ae24cc5bc35dcb149533be7d2&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DRNAseq_data.zip&response-content-type=application%2Foctet-stream [following]
+--2025-03-18 17:47:55--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/920315734/6c8cf7c0-a29e-4307-8da2-2a4f5ee66787?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250318T214755Z&X-Amz-Expires=300&X-Amz-Signature=0bd418178c40043f069e05a704e1936c2521a36ae24cc5bc35dcb149533be7d2&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DRNAseq_data.zip&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 468500417 (447M) [application/octet-stream]
+Saving to: ‘RNAseq_data.zip’
+
+RNAseq_data.zip   100%[=============>] 446.80M  1.83MB/s    in 4m 19s
+
+2025-03-18 17:52:08 (1.72 MB/s) - ‘RNAseq_data.zip’ saved [468500417/468500417]
+
+desirae@OmenPC:~$ unzip RNAseq_data.zip
+Archive:  RNAseq_data.zip
+   creating: RNAseq_data/
+   creating: RNAseq_data/samples/
+  inflating: RNAseq_data/samples/SAMPLE1_R2.fastq.gz
+  inflating: RNAseq_data/samples/SAMPLE1_R1.fastq.gz
+  inflating: RNAseq_data/samples/SAMPLE2_R2.fastq.gz
+  inflating: RNAseq_data/samples/SAMPLE2_R1.fastq.gz
+   creating: RNAseq_data/genes/
+  inflating: RNAseq_data/genes/chrX.gtf
+   creating: RNAseq_data/genome/
+  inflating: RNAseq_data/genome/chrX.fa
+   creating: RNAseq_data/indexes/
+  inflating: RNAseq_data/indexes/chrX_tran.8.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.1.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.3.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.7.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.5.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.2.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.6.ht2
+  inflating: RNAseq_data/indexes/chrX_tran.4.ht2
+desirae@OmenPC:~$ ls
+02_20_2025  02_27_25  RNAseq_data      igv
+02_25_25    03_07_25  RNAseq_data.zip
+desirae@OmenPC:~$ cd RNAseq_data/
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples
+desirae@OmenPC:~/RNAseq_data$ cd ..
+desirae@OmenPC:~$ ls RNAseq_data.zip
+RNAseq_data.zip
+desirae@OmenPC:~$ cd RNAseq_data.zip
+-bash: cd: RNAseq_data.zip: Not a directory
+desirae@OmenPC:~$ less RNAseq_data.zip
+desirae@OmenPC:~$ cd RNAseq_data/
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples
+desirae@OmenPC:~/RNAseq_data$ ls genes/
+chrX.gtf
+desirae@OmenPC:~/RNAseq_data$ ls genome
+chrX.fa
+desirae@OmenPC:~/RNAseq_data$ ls indexes
+chrX_tran.1.ht2  chrX_tran.3.ht2  chrX_tran.5.ht2  chrX_tran.7.ht2
+chrX_tran.2.ht2  chrX_tran.4.ht2  chrX_tran.6.ht2  chrX_tran.8.ht2
+desirae@OmenPC:~/RNAseq_data$ ls samples
+SAMPLE1_R1.fastq.gz  SAMPLE2_R1.fastq.gz
+SAMPLE1_R2.fastq.gz  SAMPLE2_R2.fastq.gz
+desirae@OmenPC:~/RNAseq_data$ fastqc SAMPLE1_R1.fastq.gz
+Skipping 'SAMPLE1_R1.fastq.gz' which didn't exist, or couldn't be read
+desirae@OmenPC:~/RNAseq_data$ cd sample
+-bash: cd: sample: No such file or directory
+desirae@OmenPC:~/RNAseq_data$ cd samples
+desirae@OmenPC:~/RNAseq_data/samples$ ls
+SAMPLE1_R1.fastq.gz  SAMPLE2_R1.fastq.gz
+SAMPLE1_R2.fastq.gz  SAMPLE2_R2.fastq.gz
+desirae@OmenPC:~/RNAseq_data/samples$ fastqc SAMPLE1_R1.fastq.gz
+application/gzip
+Started analysis of SAMPLE1_R1.fastq.gz
+Approx 5% complete for SAMPLE1_R1.fastq.gz
+Approx 10% complete for SAMPLE1_R1.fastq.gz
+Approx 15% complete for SAMPLE1_R1.fastq.gz
+Approx 20% complete for SAMPLE1_R1.fastq.gz
+Approx 25% complete for SAMPLE1_R1.fastq.gz
+Approx 30% complete for SAMPLE1_R1.fastq.gz
+Approx 35% complete for SAMPLE1_R1.fastq.gz
+Approx 40% complete for SAMPLE1_R1.fastq.gz
+Approx 45% complete for SAMPLE1_R1.fastq.gz
+Approx 50% complete for SAMPLE1_R1.fastq.gz
+Approx 55% complete for SAMPLE1_R1.fastq.gz
+Approx 60% complete for SAMPLE1_R1.fastq.gz
+Approx 65% complete for SAMPLE1_R1.fastq.gz
+Approx 70% complete for SAMPLE1_R1.fastq.gz
+Approx 75% complete for SAMPLE1_R1.fastq.gz
+Approx 80% complete for SAMPLE1_R1.fastq.gz
+Approx 85% complete for SAMPLE1_R1.fastq.gz
+Approx 90% complete for SAMPLE1_R1.fastq.gz
+Approx 95% complete for SAMPLE1_R1.fastq.gz
+Analysis complete for SAMPLE1_R1.fastq.gz
+desirae@OmenPC:~/RNAseq_data/samples$ fastqc SAMPLE1_R2.fastq.gz
+application/gzip
+Started analysis of SAMPLE1_R2.fastq.gz
+Approx 5% complete for SAMPLE1_R2.fastq.gz
+Approx 10% complete for SAMPLE1_R2.fastq.gz
+Approx 15% complete for SAMPLE1_R2.fastq.gz
+Approx 20% complete for SAMPLE1_R2.fastq.gz
+Approx 25% complete for SAMPLE1_R2.fastq.gz
+Approx 30% complete for SAMPLE1_R2.fastq.gz
+Approx 35% complete for SAMPLE1_R2.fastq.gz
+Approx 40% complete for SAMPLE1_R2.fastq.gz
+Approx 45% complete for SAMPLE1_R2.fastq.gz
+Approx 50% complete for SAMPLE1_R2.fastq.gz
+Approx 55% complete for SAMPLE1_R2.fastq.gz
+Approx 60% complete for SAMPLE1_R2.fastq.gz
+Approx 65% complete for SAMPLE1_R2.fastq.gz
+Approx 70% complete for SAMPLE1_R2.fastq.gz
+Approx 75% complete for SAMPLE1_R2.fastq.gz
+Approx 80% complete for SAMPLE1_R2.fastq.gz
+Approx 85% complete for SAMPLE1_R2.fastq.gz
+Approx 90% complete for SAMPLE1_R2.fastq.gz
+Approx 95% complete for SAMPLE1_R2.fastq.gz
+Analysis complete for SAMPLE1_R2.fastq.gz
+desirae@OmenPC:~/RNAseq_data/samples$ fastqc SAMPLE2_R1.fastq.gz
+application/gzip
+Started analysis of SAMPLE2_R1.fastq.gz
+Approx 5% complete for SAMPLE2_R1.fastq.gz
+Approx 10% complete for SAMPLE2_R1.fastq.gz
+Approx 15% complete for SAMPLE2_R1.fastq.gz
+Approx 20% complete for SAMPLE2_R1.fastq.gz
+Approx 25% complete for SAMPLE2_R1.fastq.gz
+Approx 30% complete for SAMPLE2_R1.fastq.gz
+Approx 35% complete for SAMPLE2_R1.fastq.gz
+Approx 40% complete for SAMPLE2_R1.fastq.gz
+Approx 45% complete for SAMPLE2_R1.fastq.gz
+Approx 50% complete for SAMPLE2_R1.fastq.gz
+Approx 55% complete for SAMPLE2_R1.fastq.gz
+Approx 60% complete for SAMPLE2_R1.fastq.gz
+Approx 65% complete for SAMPLE2_R1.fastq.gz
+Approx 70% complete for SAMPLE2_R1.fastq.gz
+Approx 75% complete for SAMPLE2_R1.fastq.gz
+Approx 80% complete for SAMPLE2_R1.fastq.gz
+Approx 85% complete for SAMPLE2_R1.fastq.gz
+Approx 90% complete for SAMPLE2_R1.fastq.gz
+Approx 95% complete for SAMPLE2_R1.fastq.gz
+Analysis complete for SAMPLE2_R1.fastq.gz
+^[[Adesirae@OmenPC:~/RNAseq_data/samples$ fastqc SAMPLE2_R2.fastq.gz
+application/gzip
+Started analysis of SAMPLE2_R2.fastq.gz
+Approx 5% complete for SAMPLE2_R2.fastq.gz
+Approx 10% complete for SAMPLE2_R2.fastq.gz
+Approx 15% complete for SAMPLE2_R2.fastq.gz
+Approx 20% complete for SAMPLE2_R2.fastq.gz
+Approx 25% complete for SAMPLE2_R2.fastq.gz
+Approx 30% complete for SAMPLE2_R2.fastq.gz
+Approx 35% complete for SAMPLE2_R2.fastq.gz
+Approx 40% complete for SAMPLE2_R2.fastq.gz
+Approx 45% complete for SAMPLE2_R2.fastq.gz
+Approx 50% complete for SAMPLE2_R2.fastq.gz
+Approx 55% complete for SAMPLE2_R2.fastq.gz
+Approx 60% complete for SAMPLE2_R2.fastq.gz
+Approx 65% complete for SAMPLE2_R2.fastq.gz
+Approx 70% complete for SAMPLE2_R2.fastq.gz
+Approx 75% complete for SAMPLE2_R2.fastq.gz
+Approx 80% complete for SAMPLE2_R2.fastq.gz
+Approx 85% complete for SAMPLE2_R2.fastq.gz
+Approx 90% complete for SAMPLE2_R2.fastq.gz
+Approx 95% complete for SAMPLE2_R2.fastq.gz
+Analysis complete for SAMPLE2_R2.fastq.gz
+desirae@OmenPC:~/RNAseq_data/samples$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz -S SAMPLE1.sam
+(ERR): Read file 'samples/SAMPLE1_R1.fastq.gz' doesn't exist
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data/samples$ cd ..
+desirae@OmenPC:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE1_R1.fastq.gz -2 samples/SAMPLE1_R2.fastq.gz -SSAMPLE1.sam
+580042 reads; of these:
+  580042 (100.00%) were paired; of these:
+    49702 (8.57%) aligned concordantly 0 times
+    525184 (90.54%) aligned concordantly exactly 1 time
+    5156 (0.89%) aligned concordantly >1 times
+    ----
+    49702 pairs aligned concordantly 0 times; of these:
+      1358 (2.73%) aligned discordantly 1 time
+    ----
+    48344 pairs aligned 0 times concordantly or discordantly; of these:
+      96688 mates make up the pairs; of these:
+        49496 (51.19%) aligned 0 times
+        46162 (47.74%) aligned exactly 1 time
+        1030 (1.07%) aligned >1 times
+95.73% overall alignment rate
+desirae@OmenPC:~/RNAseq_data$ mkdir summary_files
+desirae@OmenPC:~/RNAseq_data$ ls
+SAMPLE1.sam  genes  genome  indexes  samples  summary_files
+desirae@OmenPC:~/RNAseq_data$ hisat2 -p 8 --no-unal --dta -x indexes/chrX_tran -1 samples/SAMPLE2_R1.fastq.gz -2 samples/SAMPLE2_R2.fastq.gz -S
+SAMPLE2.sam --summary-file summary_files/SAMPLE2SUMMARY.txt
+843202 reads; of these:
+  843202 (100.00%) were paired; of these:
+    63894 (7.58%) aligned concordantly 0 times
+    771068 (91.45%) aligned concordantly exactly 1 time
+    8240 (0.98%) aligned concordantly >1 times
+    ----
+    63894 pairs aligned concordantly 0 times; of these:
+      2053 (3.21%) aligned discordantly 1 time
+    ----
+    61841 pairs aligned 0 times concordantly or discordantly; of these:
+      123682 mates make up the pairs; of these:
+        62496 (50.53%) aligned 0 times
+        59739 (48.30%) aligned exactly 1 time
+        1447 (1.17%) aligned >1 times
+96.29% overall alignment rate
+desirae@OmenPC:~/RNAseq_data$ ls
+SAMPLE1.sam  genes   indexes  summary_files
+SAMPLE2.sam  genome  samples
+desirae@OmenPC:~/RNAseq_data$ cd summary_files/
+desirae@OmenPC:~/RNAseq_data/summary_files$ ls
+SAMPLE2SUMMARY.txt
+desirae@OmenPC:~/RNAseq_data/summary_files$ less SAMPLE2SUMMARY.txt
+desirae@OmenPC:~/RNAseq_data/summary_files$ cd ..
+desirae@OmenPC:~/RNAseq_data$ #!/usr/bin/bash
+desirae@OmenPC:~/RNAseq_data$ ls
+SAMPLE1.sam  genes   indexes  summary_files
+SAMPLE2.sam  genome  samples
+desirae@OmenPC:~/RNAseq_data$ ls
+SAMPLE1.sam  genes   indexes  samples.sh
+SAMPLE2.sam  genome  samples  summary_files
+desirae@OmenPC:~/RNAseq_data$ rm SAMPLE1.sam
+desirae@OmenPC:~/RNAseq_data$ ls
+SAMPLE2.sam  genes  genome  indexes  samples  samples.sh  summary_files
+desirae@OmenPC:~/RNAseq_data$ rm SAMPLE2.sam
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples  samples.sh  summary_files
+desirae@OmenPC:~/RNAseq_data$ cd summary_files/
+desirae@OmenPC:~/RNAseq_data/summary_files$ ls
+SAMPLE2SUMMARY.txt
+desirae@OmenPC:~/RNAseq_data/summary_files$ rm SAMPLE2SUMMARY.txt
+desirae@OmenPC:~/RNAseq_data/summary_files$ cd ..
+desirae@OmenPC:~/RNAseq_data$ rmdir summary_files/
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples  samples.sh
+desirae@OmenPC:~/RNAseq_data$ mkdir summary
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples  samples.sh  summary
+desirae@OmenPC:~/RNAseq_data$ bash samples
+samples: samples: Is a directory
+desirae@OmenPC:~/RNAseq_data$ bash samples.sh
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data$ mv samples.sh samples
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples  summary
+desirae@OmenPC:~/RNAseq_data$ mv summary samples
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  samples
+desirae@OmenPC:~/RNAseq_data$ cd samples
+desirae@OmenPC:~/RNAseq_data/samples$ ls
+SAMPLE1_R1.fastq.gz     SAMPLE1_R2_fastqc.zip   SAMPLE2_R2_fastqc.html
+SAMPLE1_R1_fastqc.html  SAMPLE2_R1.fastq.gz     SAMPLE2_R2_fastqc.zip
+SAMPLE1_R1_fastqc.zip   SAMPLE2_R1_fastqc.html  samples.sh
+SAMPLE1_R2.fastq.gz     SAMPLE2_R1_fastqc.zip   summary
+SAMPLE1_R2_fastqc.html  SAMPLE2_R2.fastq.gz
+desirae@OmenPC:~/RNAseq_data/samples$ bash samples.sh
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data/samples$ bash samples.sh
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data/samples$ less samples.sh
+desirae@OmenPC:~/RNAseq_data/samples$ bash samples.sh
+(ERR): Read file '_R1.fastq.gz' doesn't exist
+Exiting now ...
+(ERR): Read file '_R1.fastq.gz' doesn't exist
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data/samples$ ls
+SAMPLE1_R1.fastq.gz     SAMPLE1_R2_fastqc.zip   SAMPLE2_R2_fastqc.html
+SAMPLE1_R1_fastqc.html  SAMPLE2_R1.fastq.gz     SAMPLE2_R2_fastqc.zip
+SAMPLE1_R1_fastqc.zip   SAMPLE2_R1_fastqc.html  samples.sh
+SAMPLE1_R2.fastq.gz     SAMPLE2_R1_fastqc.zip   summary
+SAMPLE1_R2_fastqc.html  SAMPLE2_R2.fastq.gz
+desirae@OmenPC:~/RNAseq_data/samples$ cd ..
+desirae@OmenPC:~/RNAseq_data$ less samples.sh
+desirae@OmenPC:~/RNAseq_data$ bash samples.sh
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+(ERR): Read file 'samples/_R1.fastq.gz' doesn't exist
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data$ less samples.sh
+desirae@OmenPC:~/RNAseq_data$ less samples.sh
+desirae@OmenPC:~/RNAseq_data$ bash samples.sh
+(ERR): Could not open output file 'mapped_SAM/SAMPLE1.sam' for writing.
+Exiting now ...
+(ERR): Could not open output file 'mapped_SAM/SAMPLE2.sam' for writing.
+Exiting now ...
+desirae@OmenPC:~/RNAseq_data$ mkdir mapped_SAM
+desirae@OmenPC:~/RNAseq_data$ bash samples.sh
+580042 reads; of these:
+  580042 (100.00%) were paired; of these:
+    49702 (8.57%) aligned concordantly 0 times
+    525184 (90.54%) aligned concordantly exactly 1 time
+    5156 (0.89%) aligned concordantly >1 times
+    ----
+    49702 pairs aligned concordantly 0 times; of these:
+      1358 (2.73%) aligned discordantly 1 time
+    ----
+    48344 pairs aligned 0 times concordantly or discordantly; of these:
+      96688 mates make up the pairs; of these:
+        49496 (51.19%) aligned 0 times
+        46162 (47.74%) aligned exactly 1 time
+        1030 (1.07%) aligned >1 times
+95.73% overall alignment rate
+843202 reads; of these:
+  843202 (100.00%) were paired; of these:
+    63894 (7.58%) aligned concordantly 0 times
+    771068 (91.45%) aligned concordantly exactly 1 time
+    8240 (0.98%) aligned concordantly >1 times
+    ----
+    63894 pairs aligned concordantly 0 times; of these:
+      2053 (3.21%) aligned discordantly 1 time
+    ----
+    61841 pairs aligned 0 times concordantly or discordantly; of these:
+      123682 mates make up the pairs; of these:
+        62496 (50.53%) aligned 0 times
+        59739 (48.30%) aligned exactly 1 time
+        1447 (1.17%) aligned >1 times
+96.29% overall alignment rate
+desirae@OmenPC:~/RNAseq_data$ ls
+genes  genome  indexes  mapped_SAM  samples  samples.sh
+desirae@OmenPC:~/RNAseq_data$ mapped_SAM
+mapped_SAM: command not found
+desirae@OmenPC:~/RNAseq_data$ ls mapped_SAM
+SAMPLE1.sam  SAMPLE2.sam
+desirae@OmenPC:~/RNAseq_data$ cd mapped_SAM
+desirae@OmenPC:~/RNAseq_data/mapped_SAM$ less SAMPLE1.sam
+desirae@OmenPC:~/RNAseq_data/mapped_SAM$ less SAMPLE2.sam
+desirae@OmenPC:~/RNAseq_data/mapped_SAM$
