@@ -1,0 +1,56 @@
+"""
+activity2.py
+Purpose: the purpose of this code is to practice varables
+Author: Desirae
+Date: 04/01/2025
+"""
+
+# DNA sequence
+DNA="ATGNCGTCAGNTCTAG"
+
+# number
+Number= 40307600175257
+
+# print DNA
+print(DNA)
+
+# print number
+print(Number)
+
+DNA[5]
+
+DNA[9]
+
+DNA[-3]
+
+DNA[-7]
+
+DNA[2:7]
+
+DNA.replace('N', 'C')
+
+weekdays=['Mo', 'Tu', 'We', 'Th', 'Fr']
+
+weekdays[3]
+
+empty_list=[]
+
+weekdays.append('Sa')
+
+print(weekdays)
+
+weekdays.remove('Mo')
+
+print(weekdays)
+
+
+
+colors=['Purple', 'Pink', 'Blue']
+
+print(colors[2])
+
+colors.append('Orange')
+
+colors.remove('Purple')
+
+print(colors)
